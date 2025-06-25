@@ -11,16 +11,17 @@
            revision="main" />  <!-- 修改默认分支为main -->
   
   <!-- 修正项目分支 -->
+  <!-- 修正项目路径 -->
   <project path="kernel/msm-6.6" 
-           name="realme-kernel-opensource/realme_GT7pro-Speed-AndroidV-kernel-source"  
+           name="realme_GT7pro-Speed-AndroidV-kernel-source" 
            revision="main" />
   
   <project path="vendor/realme" 
-           name="realme-kernel-opensource/realme_GT7pro-Speed-AndroidV-vendor-source"
+           name="realme_GT7pro-Speed-AndroidV-vendor-source"
            revision="main" />
   
   <project path="common" 
-           name="realme-kernel-opensource/realme_GT7pro-Speed-AndroidV-common-source"
+           name="realme_GT7pro-Speed-AndroidV-common-source"
            revision="main" />
 
   <!-- 预编译工具链 -->
