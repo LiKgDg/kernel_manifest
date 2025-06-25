@@ -11,7 +11,7 @@
 
   <!-- 内核主仓库 -->
   <project path="kernel/msm-6.6" 
-           name="realme_GT7pro-Speed-AndroidV-kernel-source" 
+           name="realme-kernel-opensource/realme_GT7pro-Speed-AndroidV-kernel-source" 
            clone-depth="1"
            revision="master" />  <!-- 明确指定分支 -->
 
