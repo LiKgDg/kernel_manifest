@@ -2,27 +2,26 @@
 <manifest>
   <!-- 定义远程仓库源 -->
   <!-- 修改远程仓库配置 -->
+  <!-- 修改所有项目分支为实际存在的分支 -->
   <remote name="realme"
           fetch="https://github.com/realme-kernel-opensource/"
-          revision="main" />  <!-- 修改默认分支为main -->
+          revision="master" />  <!-- 改为实际存在的分支 -->
   
   <default remote="realme"
            sync-j="8"
-           revision="main" />  <!-- 修改默认分支为main -->
+           revision="master" />  <!-- 统一使用master分支 -->
   
-  <!-- 修正项目分支 -->
-  <!-- 修正项目路径 -->
   <project path="kernel/msm-6.6" 
-           name="realme_GT7pro-Speed-AndroidV-kernel-source" 
-           revision="main" />
-  
+           name="realme_GT7pro-Speed-AndroidV-kernel-source"
+           revision="master" />
+
   <project path="vendor/realme" 
            name="realme_GT7pro-Speed-AndroidV-vendor-source"
-           revision="main" />
+           revision="master" />
   
   <project path="common" 
            name="realme_GT7pro-Speed-AndroidV-common-source"
-           revision="main" />
+           revision="master" />
 
   <!-- 预编译工具链 -->
   <project path="prebuilts/build-tools" 
