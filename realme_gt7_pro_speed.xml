@@ -5,9 +5,9 @@
           fetch="https://github.com/realme-kernel-opensource/"
           revision="main"/>
           
-<remote name="gitlab"
-        fetch="https://gitlab.com/your/project/path"
-        review="https://gitlab.com"/>
+  <remote name="github"
+          fetch="https://github.com/"
+          revision="main"/>
 
   <default remote="realme"
            sync-j="8"
@@ -46,8 +46,8 @@
   <!-- 新增远程仓库定义 -->
   <!-- 在remote定义区域新增gitlab远程 -->
   <remote name="gitlab"
-          fetch="https://gitlab.com/"
-          revision="main" />
+        fetch="https://gitlab.com/your/project/path"
+        review="https://gitlab.com"/>
   
   <!-- 修改现有项目引用 -->
   <project path="kernel/patches/susfs" 
