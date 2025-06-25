@@ -17,5 +17,5 @@
   <project path="common" name="realme_GT7pro-Speed-AndroidV-common-source" revision="master"/> <!-- 根据实际分支修改 -->
   
   <!-- 预编译工具链 -->
-  <project path="prebuilts/build-tools" name="prebuilts_build-tools" clone-depth="1" revision="master"/> <!-- 保留master分支 -->
+  <project path="prebuilts/build-tools" name="PixelExperience/prebuilts_build-tools" clone-depth="1" revision="fourteen"/> <!-- 使用PixelExperience仓库的fourteen分支 -->
 </manifest>
