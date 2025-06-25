@@ -34,4 +34,14 @@
   <remote name="github"
           fetch="https://github.com/"
           revision="main" />
+
+  <project path="kernel/patches/sched_ext" 
+           name="HanKuCha/sched_ext"
+           remote="github"
+           revision="main"/>
+  
+  <project path="kernel/patches/susfs" 
+           name="simonpunk/susfs4ksu"
+           remote="gitlab"
+           revision="gki-android15-6.6"/>
 </manifest>
