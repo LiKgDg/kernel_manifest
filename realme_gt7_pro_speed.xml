@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
   <remote name="github"
-          fetch="https://github.com/"
-          review="review.gerrit.osumc.com" />
-
-  <default revision="master"
-           remote="github"
-           sync-j="4" />
-
-  <!-- 内核仓库 -->
-  <project path="kernel/msm-6.6" name="realme-kernel-opensource/realme_GT7pro-Speed-AndroidV-kernel-source" />
+          fetch="https://github.com/realme-kernel-opensource/"
+          revision="master" />
+          
+  <default remote="github"
+           sync-j="8" />
   
-  <!-- Vendor仓库 -->
-  <project path="vendor/realme" name="realme-kernel-opensource/vendor_realme_GT7pro-Speed" />
+  <!-- 内核主仓库 -->
+  <project path="kernel/msm-6.6" name="realme_GT7pro-Speed-AndroidV-kernel-source" />
+  
+  <!-- Vendor配置 -->
+  <project path="vendor/realme" name="vendor_realme_GT7pro-Speed" />
   
   <!-- 公共组件 -->
-  <project path="common" name="realme-kernel-opensource/common" />
+  <project path="common" name="common" />
   
   <!-- 预编译工具链 -->
-  <project path="prebuilts/build-tools" name="realme-kernel-opensource/prebuilts_build-tools" />
+  <project path="prebuilts/build-tools" name="prebuilts_build-tools" clone-depth="1" />
 </manifest>
