@@ -14,7 +14,7 @@
   
   <project path="kernel/msm-6.6" 
            name="realme_GT7pro-Speed-AndroidV-kernel-source"
-           revision="main" />
+           revision="master" />
 
   <project path="vendor/realme" 
            name="realme_GT7pro-Speed-AndroidV-vendor-source"
