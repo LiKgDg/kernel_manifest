@@ -1,21 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  <remote name="github"
+  <!-- 定义远程仓库源 -->
+  <remote name="realme"
           fetch="https://github.com/realme-kernel-opensource/"
-          revision="master" />  <!-- 修改默认分支为main -->
+          revision="main" />
 
-  <default remote="github"
-           sync-j="8" />
-  
+  <default remote="realme"
+           sync-j="8"
+           revision="main" />
+
   <!-- 内核主仓库 -->
-  <project path="kernel" name="realme_GT7pro-Speed-AndroidV-kernel-source" revision="master"/> <!-- 明确指定分支 -->
+  <project path="kernel/msm-6.6" 
+           name="realme_GT7pro-Speed-AndroidV-kernel-source" 
+           clone-depth="1" />
 
   <!-- Vendor配置 -->
-  <project path="vendor" name="realme_GT7pro-Speed-AndroidV-vendor-source" revision="master"/> <!-- 根据实际分支修改 -->
+  <project path="vendor/realme" 
+           name="realme_GT7pro-Speed-AndroidV-vendor-source" />
 
   <!-- 公共组件 -->
-  <project path="common" name="realme_GT7pro-Speed-AndroidV-common-source" revision="master"/> <!-- 根据实际分支修改 -->
-  
+  <project path="common" 
+           name="realme_GT7pro-Speed-AndroidV-common-source" />
+
   <!-- 预编译工具链 -->
-  <project path="prebuilts/build-tools" name="PixelExperience/prebuilts_build-tools" clone-depth="1" revision="fourteen"/> <!-- 使用PixelExperience仓库的fourteen分支 -->
+  <project path="prebuilts/build-tools" 
+           name="PixelExperience/prebuilts_build-tools"
+           remote="github"
+           revision="fourteen" />
+  
+  <!-- 新增远程仓库定义 -->
+  <remote name="github"
+          fetch="https://github.com/"
+          revision="main" />
 </manifest>
