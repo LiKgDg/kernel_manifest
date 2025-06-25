@@ -2,19 +2,19 @@
 <manifest>
   <remote name="github"
           fetch="https://github.com/realme-kernel-opensource/"
-          revision="main" />  <!-- 修改默认分支为main -->
+          revision="master" />  <!-- 修改默认分支为main -->
 
   <default remote="github"
            sync-j="8" />
   
   <!-- 内核主仓库 -->
-  <project path="kernel/msm-6.6" name="realme_GT7pro-Speed-AndroidV-kernel-source" revision="main"/> <!-- 明确指定分支 -->
-  
+  <project path="kernel" name="realme_GT7pro-Speed-AndroidV-kernel-source" revision="master"/> <!-- 明确指定分支 -->
+
   <!-- Vendor配置 -->
-  <project path="vendor/realme" name="vendor_realme_GT7pro-Speed" revision="android13"/> <!-- 根据实际分支修改 -->
-  
+  <project path="vendor" name="realme_GT7pro-Speed-AndroidV-vendor-source" revision="master"/> <!-- 根据实际分支修改 -->
+
   <!-- 公共组件 -->
-  <project path="common" name="common" revision="android13"/> <!-- 根据实际分支修改 -->
+  <project path="common" name="realme_GT7pro-Speed-AndroidV-common-source" revision="master"/> <!-- 根据实际分支修改 -->
   
   <!-- 预编译工具链 -->
   <project path="prebuilts/build-tools" name="prebuilts_build-tools" clone-depth="1" revision="master"/> <!-- 保留master分支 -->
