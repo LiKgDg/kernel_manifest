@@ -1,66 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  <!-- 远程仓库定义 -->
-  <remote name="realme"
-          fetch="https://github.com/LiKgDg/"/>
-  <remote name="aosp"
-          fetch="https://android.googlesource.com/"
-          review="https://android-review.googlesource.com/"/>
+  <remote name="github"
+          fetch="https://github.com/"
+          review="review.gerrit.osumc.com" />
 
-  <!-- 全局默认设置 -->
-  <default revision="main"
-           remote="realme"
-           sync-j="8"
-           sync-c="true"
-           sync-tags="false"/>
+  <default revision="master"
+           remote="github"
+           sync-j="4" />
 
-<!-- 修改内核主仓库定义 -->
-<project path="kernel/msm-6.6" 
-         name="realme_GT7pro-Speed-AndroidV-kernel-source"
-         remote="realme"
-         revision="main"/>
-         
-  <!-- 内核主模块 -->
-  <project path="kernel/msm-6.6"
-           name="kernel_manifest"
-           revision="main">
-    <linkfile src="build.config" dest="build.config"/>
-    <linkfile src="Makefile" dest="Makefile"/>
-  </project>
-
-  <!-- 内核平台配置 -->
-  <project path="kernel/platform"
-           name="kernel_platform"
-           revision="main"
-           groups="pdk">
-    <linkfile src="ccache.sh" dest="ccache.sh"/>
-  </project>
-
-  <!-- Vendor Source -->
-  <project path="vendor/realme"
-           name="realme_GT7pro-Speed-AndroidV-vendor-source"
-           revision="main"/>
-
-  <!-- 公共源码 -->
-  <project path="common"
-           name="realme_GT7pro-Speed-AndroidV-common-source"
-           revision="main"/>
-
-  <!-- 预编译模块 -->
-  <project path="vendor/realme/modules"
-           name="vendor_modules"
-           revision="main"
-           groups="pdk,qcom,vendor"/>
-
-  <!-- AOSP基础组件 -->
-  <project path="system/core"
-           name="platform/system/core"
-           remote="aosp"
-           revision="main"/>
-
-  <!-- 构建工具链 -->
-<project path="prebuilts/build-tools" 
-         name="platform/prebuilts/build-tools"
-         remote="aosp"
-         revision="android-14.0.0_r37"/>
+  <!-- 内核仓库 -->
+  <project path="kernel/msm-6.6" name="realme-kernel-opensource/realme_GT7pro-Speed-AndroidV-kernel-source" />
+  
+  <!-- Vendor仓库 -->
+  <project path="vendor/realme" name="realme-kernel-opensource/vendor_realme_GT7pro-Speed" />
+  
+  <!-- 公共组件 -->
+  <project path="common" name="realme-kernel-opensource/common" />
+  
+  <!-- 预编译工具链 -->
+  <project path="prebuilts/build-tools" name="realme-kernel-opensource/prebuilts_build-tools" />
 </manifest>
