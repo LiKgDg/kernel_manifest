@@ -14,6 +14,12 @@
            sync-c="true"
            sync-tags="false"/>
 
+<!-- 修改内核主仓库定义 -->
+<project path="kernel/msm-6.6" 
+         name="realme_GT7pro-Speed-AndroidV-kernel-source"
+         remote="realme"
+         revision="main"/>
+         
   <!-- 内核主模块 -->
   <project path="kernel/msm-6.6"
            name="kernel_manifest"
