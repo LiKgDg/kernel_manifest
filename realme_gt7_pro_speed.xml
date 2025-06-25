@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <!-- 远程仓库定义 -->
+  <remote name="realme"
+          fetch="https://github.com/LiKgDg/"/>
+  <remote name="aosp"
+          fetch="https://android.googlesource.com/"
+          review="https://android-review.googlesource.com/"/>
+
+  <!-- 全局默认设置 -->
+  <default revision="main"
+           remote="realme"
+           sync-j="8"
+           sync-c="true"
+           sync-tags="false"/>
+
+  <!-- 内核主模块 -->
+  <project path="kernel/msm-6.6"
+           name="kernel_manifest"
+           revision="main">
+    <linkfile src="build.config" dest="build.config"/>
+    <linkfile src="Makefile" dest="Makefile"/>
+  </project>
+
+  <!-- 内核平台配置 -->
+  <project path="kernel/platform"
+           name="kernel_platform"
+           revision="main"
+           groups="pdk">
+    <linkfile src="ccache.sh" dest="ccache.sh"/>
+  </project>
+
+  <!-- Vendor Source -->
+  <project path="vendor/realme"
+           name="realme_GT7pro-Speed-AndroidV-vendor-source"
+           revision="main"/>
+
+  <!-- 公共源码 -->
+  <project path="common"
+           name="realme_GT7pro-Speed-AndroidV-common-source"
+           revision="main"/>
+
+  <!-- 预编译模块 -->
+  <project path="vendor/realme/modules"
+           name="vendor_modules"
+           revision="main"
+           groups="pdk,qcom,vendor"/>
+
+  <!-- AOSP基础组件 -->
+  <project path="system/core"
+           name="platform/system/core"
+           remote="aosp"
+           revision="main"/>
+
+  <!-- 构建工具链 -->
+<project path="prebuilts/build-tools" 
+         name="platform/prebuilts/build-tools"
+         remote="aosp"
+         revision="android-14.0.0_r37"/>
+</manifest>
