@@ -3,24 +3,27 @@
   <!-- 定义远程仓库源 -->
   <remote name="realme"
           fetch="https://github.com/realme-kernel-opensource/"
-          revision="main" />
+          revision="master" />  <!-- 修改默认分支为master -->
 
   <default remote="realme"
            sync-j="8"
-           revision="main" />
+           revision="master" />  <!-- 修改默认分支为master -->
 
   <!-- 内核主仓库 -->
   <project path="kernel/msm-6.6" 
            name="realme_GT7pro-Speed-AndroidV-kernel-source" 
-           clone-depth="1" />
+           clone-depth="1"
+           revision="master" />  <!-- 明确指定分支 -->
 
   <!-- Vendor配置 -->
   <project path="vendor/realme" 
-           name="realme_GT7pro-Speed-AndroidV-vendor-source" />
+           name="realme_GT7pro-Speed-AndroidV-vendor-source"
+           revision="master" />  <!-- 添加分支 -->
 
   <!-- 公共组件 -->
   <project path="common" 
-           name="realme_GT7pro-Speed-AndroidV-common-source" />
+           name="realme_GT7pro-Speed-AndroidV-common-source"
+           revision="master" />  <!-- 添加分支 -->
 
   <!-- 预编译工具链 -->
   <project path="prebuilts/build-tools" 
