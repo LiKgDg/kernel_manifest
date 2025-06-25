@@ -9,11 +9,10 @@
            sync-j="8"
            revision="master" />  <!-- 修改默认分支为master -->
 
-  <!-- 内核主仓库 -->
-  <project path="kernel/msm-6.6" 
-           name="realme-kernel-opensource/realme_GT7pro-Speed-AndroidV-kernel-source" 
-           clone-depth="1"
-           revision="master" />  <!-- 明确指定分支 -->
+<!-- realme_gt7_pro_speed.xml 片段 -->
+<project path="kernel/msm-6.6" 
+        name="realme-kernel-opensource/realme_GT7pro-Speed-AndroidV-kernel-source" 
+        revision="master" />
 
   <!-- Vendor配置 -->
   <project path="vendor/realme" 
