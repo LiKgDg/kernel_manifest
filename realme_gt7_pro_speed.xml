@@ -17,12 +17,12 @@
 
   <!-- Vendor配置 -->
   <project path="vendor/realme" 
-           name="realme_GT7pro-Speed-AndroidV-vendor-source"
+           name="realme-kernel-opensource/realme_GT7pro-Speed-AndroidV-vendor-source"
            revision="master" />  <!-- 添加分支 -->
 
   <!-- 公共组件 -->
   <project path="common" 
-           name="realme_GT7pro-Speed-AndroidV-common-source"
+           name="realme-kernel-opensource/realme_GT7pro-Speed-AndroidV-common-source"
            revision="master" />  <!-- 添加分支 -->
 
   <!-- 预编译工具链 -->
