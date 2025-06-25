@@ -1,20 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
   <!-- 定义远程仓库源 -->
-  <!-- 修改远程仓库配置 -->
-  <!-- 修改所有项目分支为实际存在的分支 -->
-  <!-- 修正分支为main -->
   <remote name="realme"
           fetch="https://github.com/realme-kernel-opensource/"
-          revision="main" />
-  
+          revision="main"/>
+          
+  <remote name="github"
+          fetch="https://github.com/"
+          revision="main"/>
+          
+  <remote name="gitlab"
+          fetch="https://gitlab.com/"
+          revision="main"/>
+
   <default remote="realme"
            sync-j="8"
-           revision="main" />
-  
+           revision="main"/>
+
+  <!-- 内核项目 -->
   <project path="kernel/msm-6.6" 
            name="realme_GT7pro-Speed-AndroidV-kernel-source"
-           revision="master" />
+           revision="main"/>
+
+  <!-- 新增补丁项目 -->
+  <project path="kernel/patches/sched_ext" 
+           name="HanKuCha/sched_ext"
+           remote="github"
+           revision="main"/>
+           
+  <project path="kernel/patches/susfs" 
+           name="simonpunk/susfs4ksu"
+           remote="gitlab"
+           revision="gki-android15-6.6"/>
 
   <project path="vendor/realme" 
            name="realme_GT7pro-Speed-AndroidV-vendor-source"
@@ -31,15 +48,12 @@
            revision="fourteen" />
   
   <!-- 新增远程仓库定义 -->
-  <remote name="github"
-          fetch="https://github.com/"
+  <!-- 在remote定义区域新增gitlab远程 -->
+  <remote name="gitlab"
+          fetch="https://gitlab.com/"
           revision="main" />
-
-  <project path="kernel/patches/sched_ext" 
-           name="HanKuCha/sched_ext"
-           remote="github"
-           revision="main"/>
   
+  <!-- 修改现有项目引用 -->
   <project path="kernel/patches/susfs" 
            name="simonpunk/susfs4ksu"
            remote="gitlab"
