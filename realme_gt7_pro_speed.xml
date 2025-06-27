@@ -1,57 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  <!-- 定义远程仓库源 -->
-  <remote name="realme"
-          fetch="https://github.com/realme-kernel-opensource/"
-          revision="main"/>
-          
-  <remote name="github"
-          fetch="https://github.com/"
-          revision="main"/>
+    <!-- 新增 realme 远程仓库 -->
+    <remote name="realme"
+            fetch="https://github.com/realme-kernel-opensource/"
+            revision="main"/>
+    
+    <!-- 修改默认配置 -->
+    <default remote="realme"
+             revision="main"
+             sync-j="8"/>
 
-  <default remote="realme"
-           sync-j="8"
-           revision="main"/>
+    <!-- 添加内核源码项目 -->
+    <project path="kernel/msm-6.6" 
+             name="realme_GT7pro-Speed-AndroidV-kernel-source"
+             groups="ddk"/>
 
-  <!-- 内核项目 -->
-  <project path="kernel/msm-6.6" 
-           name="realme_GT7pro-Speed-AndroidV-kernel-source"
-           revision="main"/>
-
-  <!-- 新增补丁项目 -->
-  <project path="kernel/patches/sched_ext" 
-           name="HanKuCha/sched_ext"
-           remote="github"
-           revision="main"/>
-           
-  <project path="kernel/patches/susfs" 
-           name="simonpunk/susfs4ksu"
-           remote="gitlab"
-           revision="gki-android15-6.6"/>
-
-  <project path="vendor/realme" 
-           name="realme_GT7pro-Speed-AndroidV-vendor-source"
-           revision="master" />
-  
-  <project path="common" 
-           name="realme_GT7pro-Speed-AndroidV-common-source"
-           revision="master" />
-
-  <!-- 预编译工具链 -->
-  <project path="prebuilts/build-tools" 
-           name="PixelExperience/prebuilts_build-tools"
-           remote="github"
-           revision="fourteen" />
-  
-  <!-- 新增远程仓库定义 -->
-  <!-- 在remote定义区域新增gitlab远程 -->
-  <remote name="gitlab"
-        fetch="https://gitlab.com/your/project/path"
-        review="https://gitlab.com"/>
-  
-  <!-- 修改现有项目引用 -->
-  <project path="kernel/patches/susfs" 
-           name="simonpunk/susfs4ksu"
-           remote="gitlab"
-           revision="gki-android15-6.6"/>
+    <!-- 添加补丁集成 -->
+    <project path="kernel/patches/sched_ext" 
+             name="HanKuCha/sched_ext"
+             remote="github"
+             revision="main"/>
+    
+    <!-- 保留原始测试配置 -->
+    <project path="build/kernel" name="kernel/build" groups="ddk">
+        <linkfile src="kleaf/bazel.sh" dest="tools/bazel" />
+        <linkfile src="kleaf/bzlmod/bazel.MODULE.bazel" dest="MODULE.bazel" />
+    </project>
 </manifest>
