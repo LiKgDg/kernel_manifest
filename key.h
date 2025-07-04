@@ -9,7 +9,8 @@
 
 #ifndef _LINUX_KEY_H
 #define _LINUX_KEY_H
-
+#include <linux/slab.h>
+#include <linux/assoc_array.h>
 #include <linux/types.h>
 #include <linux/list.h>
 #include <linux/rbtree.h>
